@@ -2,14 +2,24 @@
   "name": "mars-rover",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch",
+    "start": "parcel src/index.html"
   },
   "keywords": [],
   "author": "Aditya",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-jest": "^26.3.0",
     "jest": "^26.4.2"
   }
 }
