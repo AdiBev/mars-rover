@@ -3,22 +3,23 @@ import { checkPlateauBounds } from "./checkPlateauBounds";
 import { directionsObj } from "./utils/directionsObj";
 
 export const executeInstructions = (coordinates, instructions, gridArea) => {
-  ///initial rover coordinates
-  const { position, direction } = getRoverInfo(coordinates);
-  const instructionsArr = instructions.split(" ");
+  const coordinatesArr = coordinates.split(" ");
+  const instructionsArr = instructions.split("");
+
+  ///initial rover coordinates and direction
+  let { position, direction } = getRoverInfo(coordinatesArr);
 
   instructionsArr.forEach((instruction) => {
-    ///check if initial bounds are within grid area
-    if (checkPlateauBounds(position.x, position.y, gridArea)) {
-      if (instruction === "M") {
-        position = directionsObj[direction]["move"](position.x, position.y);
-      } else {
-        direction = directionsObj[direction][instruction];
-      }
-    } else {
-      console.log("Bounds out of reach");
+    ///check if bounds are within grid area
+    if (
+      instruction === "M" &&
+      checkPlateauBounds(position.x, position.y, gridArea)
+    ) {
+      position = directionsObj[direction]["move"](position.x, position.y);
+    } else if (checkPlateauBounds(position.x, position.y, gridArea)) {
+      direction = directionsObj[direction][instruction];
     }
   });
 
-  return { position, direction };
+  return { x: position.x, y: position.y, direction };
 };
