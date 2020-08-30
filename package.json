@@ -1,7 +1,7 @@
 {
   "name": "mars-rover",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mars rover challenge",
   "main": "src/index.js",
   "jest": {
     "verbose": true,
@@ -10,8 +10,8 @@
     }
   },
   "scripts": {
-    "test": "jest --watch",
-    "start": "parcel src/index.html"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "Aditya",
