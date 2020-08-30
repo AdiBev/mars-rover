@@ -3,7 +3,7 @@ import { checkPlateauBounds } from "../checkPlateauBounds";
 const gridArea = [5, 5];
 
 describe("checks if current coordinates are inside of grid area", () => {
-  test("when coordinatres out of reach return false", () => {
+  test("when coordinates out of reach return false", () => {
     expect(checkPlateauBounds(4, 6, gridArea)).toBe(false);
   });
 
