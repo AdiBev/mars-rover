@@ -1,6 +1,9 @@
 # Mars rover challenge
 
 ## Scripts 
+
+Here [Jest](https://jestjs.io/) is used to run tests.
+
 To run all tests  `npm run test`
 
 To watch tests `npm run test:watch`
