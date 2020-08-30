@@ -22,4 +22,6 @@ To watch tests `npm run test:watch`
 
 `handleOutput.js` -- Handles final output and returns it in new lines. Returns `string` :heavy_check_mark:
 
+`directionsObj.js` -- Transforms current direction and movement 
+
 `index.js` -- Main entry file where `moveRover.js` file is imported
